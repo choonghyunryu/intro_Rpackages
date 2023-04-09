@@ -1,0 +1,344 @@
+# `bitGPT Demo`
+
+
+## 텍스트 완성
+
+::: panel-tabset
+###  create_completion()
+
+- `create_completion()`를 이용해서 텍스트 완성을 수행합니다.
+- 한글 프롬프트
+    - "최고의 R 학습 방법을 알려주세요. 학습해야할 데이터 분석 이론과 중요한 R 패키지를 포함해 주세요."
+- 영문 프롬프트
+    - "Tell me the best way to learn R. Include data analysis theories and important R packages to learn."
+- ko2en = TRUE 인수의 사용
+    - 프로프트를 영문으로 번역 후 API를 호출하고, 영문 결과를 한글로 번역
+
+
+###  한글 프롬프트
+
+- `ko2en = FALSE` 인수 적용으로 한글 프롬프트로 질의
+
+![](img/text_ko.png){width=90% fig-align="left"}
+
+### 영문 프롬프트
+
+- 영문 프롬프트 사용
+
+![](img/text_en.png){width=90% fig-align="left"}
+
+
+### 번역 프롬프트
+
+- 한글 프롬프트로 질의 후 영문결과를 한글번역
+
+![](img/text_trans.png){width=90% fig-align="left"}
+
+::: aside
+
+영문 질의 필요성 - "**text-davinci-003 모델의 한글 취약성, 영문번역을 사용**"
+
+:::
+
+:::
+
+
+## 채팅 완성
+
+::: panel-tabset
+###  chat_completion()
+
+- `chat_completion()`를 채팅 앱을 개발할 수 있습니다.
+- 함수의 목적
+    - Shiny 앱이나 Markdown 문서를 개발할 수 있는 개발 용도
+- Message 객체의 핸들링이 필요
+    - 생성: `create_messages()`
+    - 추가: `add()` 
+    - 조회: `show()`
+
+### 메시지 생성
+
+- 채팅을 수행하기 위한 질문과 답변을 담는 메시지 객체 생성
+    - with `create_messages()`
+    
+![](img/message.png){width=50% fig-align="left"}
+
+### 질문
+
+- chat_completion(msg, type = "messages")
+
+![](img/chat_comp.png){width=40% fig-align="left"}
+
+
+### 메시지 추가
+
+- add(answer, user = "커리큘럼에 tidyverse 패키지를 사용하는 방법을 추가해줘.")
+
+![](img/add_msg.png){width=50% fig-align="left"}
+
+
+
+### 재질문
+
+- chat_completion(msg, type = "message")
+
+![](img/re_answer.png){width=50% fig-align="left"}
+
+:::
+
+
+## 메시지 보기
+
+::: panel-tabset
+### `show()`
+
+- `show()`를 이용해서 메시지 객체를 조회
+- type 인수
+    - "console"
+        - 콘솔에 텍스트 출력
+    - "viewer"
+        - HTML 페이지 생성 후 브라우저 출력
+
+### console
+
+- show(answer2, type = "console")
+    
+![](img/console.png){width=50% fig-align="left"}
+
+### viewer
+
+- show(answer2, type = "viewer")
+
+![](img/viewer.png){width=35% fig-align="left"}
+
+:::
+
+
+## 채팅
+
+::: panel-tabset
+### `keep_completion()`
+
+- R 사용자가 콘솔에서 채팅을 수행할 때 이용
+- `keep_completion()`를 이용해서 콘솔에서 채팅 수행
+    - `chat_completion()`, `show()` 등일 이용해 함수 개발
+- `last` 인수
+    - 마지막 내용만 출력할지의 여부
+- `initialize` 인수
+    - 새로운 채팅을 시작할 지의 여부
+    
+### 채팅 수행
+
+- 우리나라의 주요 이슈는 무엇인가?
+    
+![](img/chat.png){width=55% fig-align="left"}
+
+:::
+
+
+## 임베딩
+
+::: panel-tabset
+### `create_embeddings()`
+
+- 텍스트 데이터의 분석을 위한 임베딩 데이터 생성
+- `keep_completion()`를 이용해서 임베딩 생성
+- 텍스트 임베딩 활용
+    - 유사도 분석 - Search Documents
+    - 분류 모델 - Taxonomy Documents
+
+### 임베딩
+
+- 한국의 대표 시 3개중 특정 절의 임베딩
+- 님의 침묵, 향수, 목마와 숙녀
+
+![](img/poem.png){width=100% fig-align="left"}
+
+### 유사도 분석
+
+- 6개 절의 임베딩 값으로 Cosine Similarity 분석
+- 동일 시의 절의 유사도가 가장 높게 나타남
+
+![](img/embeddings.png){width=55% fig-align="left"}
+
+:::
+
+
+
+## 이미지 생성
+
+::: panel-tabset
+###  draw_img()
+
+- `draw_img()`를 이용해서 그림을 그려봅니다.
+- 한글 프롬프트
+    - "풍선을 들고 있는 외로운 로봇을 연필과 수채화의 추상화로 그려줘."
+- 영문 프롬프트
+    - "Draw a lonely robot holding a balloon with an abstract painting of a pencil and watercolor."
+- ko2en 인수의 사용
+    - 기본값인 TRUE는 한글 프롬프트를 영문으로 번역 후 API를 호출함
+
+
+###  한글 프롬프트
+
+- draw_img(prompt_ko, ko2en = FALSE)
+
+![](img/robot_kr.png){width=37% fig-align="left"}
+
+### 영문 프롬프트
+
+- draw_img(prompt_en)
+
+![](img/robot_en.png){width=37% fig-align="left"}
+
+
+### 번역 프롬프트
+
+- draw_img(prompt_ko)
+
+![](img/robot_trans.png){width=38% fig-align="left"}
+
+::: aside
+
+영문 질의 필요성 - "**한글을 이해하지 못하는 서비스, 영문번역을 사용**"
+
+:::
+
+:::
+
+
+## 이미지 변형
+
+
+::: panel-tabset
+###  draw_img_variation()
+
+- `draw_img_variation()`를 이용해서 그림을 변형해봅니다.
+- 풍선을 들고 있는 외로운 로봇
+    - "abstract pencil and watercolor art of a lonely robot hoilding a balloon."
+- `draw_img()`로 그린 그림이 마음에 들지만 뭔가 부족하다면?
+    - 새로 그리기 보다는 `draw_img_variation()`로 그림에 변형을 가해보세요.
+    
+###  원본
+
+- "abstract pencil and watercolor art of a lonely robot hoilding a balloon."
+
+![](img/robot.png){width=42% fig-align="left"}
+
+### 변형
+
+- draw_img_variation("origin.png", fname = "variation")
+
+![](img/robot_variation.png){width=42% fig-align="left"}
+
+
+### 변형 2
+
+- draw_img_variation("variation.png", fname = "variation2")
+
+![](img/robot_variation2.png){width=42% fig-align="left"}
+
+
+### 변형 3
+
+- draw_img_variation("variation2.png", fname = "variation3")
+
+![](img/robot_variation3.png){width=42% fig-align="left"}
+
+:::
+
+
+## 이미지 편집
+
+::: panel-tabset
+###  draw_img_edit()
+
+- `draw_img_edit()`를 이용해서 그림을 편집해봅니다.
+- 이미지의 특정 부분을 편집할때 사용 
+- 원본 이미지와 편집할 부분을 투명으로 마스킹한 이미지 필요
+- `in-painting`과 `out-painting`
+    - [How to use DALL•E](https://dallery.gallery/dall-e-ai-guide-faq/){target="_blank"}
+    - in-painting: 대상 이미지의 내부에서 편집
+    - out-painting: 대상 이미지의 외부 배경을 편집
+    
+    
+### 이미지
+
+- 원본(좌측) 이미지 내부에 수정할 부분을 제거하여, 투명하게 만든 마스크 이미지(우측)
+
+![원본 이미지 - image](img/robot.png){width=35% fig-align="left"}
+![마스크 이미지 - mask](img/robot_mask.png){width=35% fig-align="left"}
+
+### 편집 1
+
+- draw_img_edit(image, mask, prompt = "연을 날리고 있는 로봇")
+
+![](img/edit_01.png){width=35% fig-align="left"}
+
+
+### 편집 2
+
+- draw_img_edit(image, mask, prompt = "A robot flying a kite")
+
+![](img/edit_02.png){width=35% fig-align="left"}
+
+
+### 편집 3
+
+- draw_img_edit(image, mask, prompt = "로봇이 연을 날리고 있다.")
+
+![](img/edit_03.png){width=35% fig-align="left"}
+
+
+### 편집 4
+
+- draw_img_edit(image, mask, prompt = "줄 위에는 연이 매달려있다.")
+
+![](img/edit_04.png){width=35% fig-align="left"}
+
+::: aside
+
+프롬프트의 중요성 - "**AI는 인간이 아니야, 생각이 없어!!! 모호하지 않고 구체으로 세세하게.**"
+
+:::
+
+:::
+
+
+## STT (Speech to Text)
+
+::: panel-tabset
+###  transcript_audio()
+
+- `transcript_audio()`
+    - 이용해서 음성 오디오 파일로 STT(Speech to Text)를 수행
+- 한글 음성도 가능함
+    - language = "ko" 옵션 지정
+- 지원 오디오 포맷
+    - mp3, mp4, mpeg, mpga, m4a, wav, webm
+
+### Speech
+
+- `bitGPT` 패키지의 `record_audio()` 함수로 음성을 녹음
+    - voice.wav
+- 부정확한 발음 포함
+- 생소한 단어 포함 (?)
+    - 시나브로
+
+<figure>
+<figcaption>Click to listen</figcaption>
+<audio controls src="voice.wav">
+        Your browser does not support the
+        <code>audio</code> element.
+</audio>
+</figure>
+
+
+### Text
+
+![](img/stt.png){width=90% fig-align="left"}
+
+:::
+
+
+

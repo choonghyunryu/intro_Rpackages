@@ -1,0 +1,35 @@
+---
+title: "chatGPT와 데이터 사이언스"
+subtitle: "R과 함께 chatGPT 활용하기"
+author: "유충현"
+institute: "한국R사용자회"
+date: "2023-04-13"
+format: 
+  insper-revealjs:
+    self-contained: true
+    footer: |
+      [한국 R 사용자회](https://r2bit.com/){target="_blank"} • 슬라이드 제작 [Quarto](https://quarto.org/){target="_blank"} • 테마 [Insper](https://github.com/padsInsper/quarto-insper-theme){target="_blank"}
+date-format: long
+lang: ko
+filters:
+   - lightbox
+lightbox: auto
+---
+
+## 목차
+
+1. R 패키지
+2. OpenAI API
+3. bitGPT
+4. bitGPT Demo
+5. 질의 응답
+
+{{< include 01-R_packages.qmd >}}
+
+{{< include 02-intro_OpenAI.qmd >}}
+
+{{< include 03-intro_bitGPT.qmd >}} 
+
+{{< include 04-demo_bitGPT.qmd >}} 
+
+# 질의 응답

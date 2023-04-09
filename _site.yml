@@ -1,0 +1,29 @@
+name: "Intro_R_Packages"
+title: "R 패키지 소개"
+description: |
+  My Website
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "bitGPT 패키지 이해"
+      href: bitGPT.html
+    - text: "bitR 패키지 Hands-on"
+      menu:
+        - text: "develop chatGPT application with bitGPT"
+          href: handson-bitGPT.html
+        - text: "Text Analysis with bitNLP"
+          href: handson-bitNLP.html   
+        - text: "Spatial Analysis with bitSpatial"
+          href: handson-bitSpatial.html 
+        - text: "---"          
+        - text: "Understand data with dlookr"
+          href: handson-dlookr.html    
+        - text: "Binary classification with alookr"
+          href: handson-alookr.html              
+output: 
+  distill::distill_article:
+    theme: theme.css
+    includes:
+      after_body: footer.html       

@@ -1,0 +1,54 @@
+# `OpenAI API`
+
+## OpenAI API 홈페이지
+
+::: panel-tabset
+### 홈페이지
+
+- [홈페이지](https://platform.openai.com/){target="_blank"}
+
+![](img/api_home.png){width=65% fig-align="left"}
+
+### API 레퍼런스
+
+- [API 스팩설명](https://platform.openai.com/docs/api-reference/images/create){target="_blank"}, API 개발을 위한 정보 제공
+
+![](img/api_spec.png){width=65% fig-align="left"}
+
+
+### 이용 통계
+
+- [API Usage](https://platform.openai.com/account/usage){target="_blank"}, 사용량 및 과금 정보
+
+![](img/api_usage.png){width=65% fig-align="left"}
+
+:::
+
+
+## API 레퍼런스 기반 패키지 개발
+
+::: panel-tabset
+### API 레퍼런스
+
+- API 주소, body의 파라미터, 예제 요청과 응답 구조의 파악
+
+![](img/chat_api.png){width=65% fig-align="left"}
+
+### 요청을 위한 정보의 조립
+
+- Validate arguments --> Build path parameters --> Build request body
+
+![](img/build_parameter.png){width=35% fig-align="left"}
+
+
+### 요청과 응답처리
+
+- Request and parse it --> Check whether request failed and return parsed
+
+![](img/request.png){width=40% fig-align="left"}
+
+:::
+
+
+
+

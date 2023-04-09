@@ -1,0 +1,124 @@
+# `bitGPT`
+
+## about bitGPT
+
+- **OpenAI API를 인터페이스**하는 R패키지
+    - `openai` 패키지 wrapping
+- **한글 사용 용이성**
+    - 한글 질의 --> 영문질의 --> 영문답변 --> 한글답변
+- A**PI 키 관리의 편의성**
+    - 1회 입력만으로 키 입력 불필요
+    - `OpenAI` 키와 `네이버 파파고` 키
+- chatGPT 기반의 앱 개발에 활용
+    - `Shiny` 앱이나 `RStudio Addin` 활용 가능
+- 현재 **개발이 진행되는 패키지**, 추가 개발 진행 예정    
+    
+## 시리야?!
+
+- bitGPT의 개인적인 목표
+    - **시리와 같은 음성 Assistant 구현**
+
+<style>
+    .cssClass > rect{
+        fill:#FF0000;
+        stroke:#FFFF00;
+        stroke-width:4px;
+    }
+</style>
+
+```{mermaid}
+%%| fig-align: left
+flowchart LR
+  A(음성) --> B(텍스트)
+  B --> C(텍스트)
+  C --> D(음성)
+```
+
+- 음성 --> 텍스트
+    - 음성 녹음 with `record_audio()`
+    - STT(Sppech to Text) with `transcript_audio()`
+- 텍스트 --> 텍스트    
+    - 채팅 with `chat_completion()`
+- 텍스트 --> 음성
+    - TTS(Text to Speech)
+    - 미구현, 유로 서비스 및 무료 API 부재
+    
+    
+## 한글 지원기능
+
+- 몇몇 OpenAI API의 **한글 프롬프트 성능 저하 이슈**
+    - 한글 <--> 영문의 번영의 필요성
+- DeepL 인터페이싱 불가
+    - 현재, 한국어 API 서비스 미지원
+- **네이버 파파고 번역 API 인터페이스**
+    - `translate()`
+    - 개인적인 생각의 성능 비교 
+        - DeepL > 파파고
+- 프롬프트 엔지니어링
+    - 좀더 성능을 높이기 위해서는 영문으로 프롬프트 개선 필요
+    
+    
+## API 키 관리 방법
+
+::: panel-tabset
+### 키 등록 방법
+
+- **1회 등록만하면 지속 사용 가능**
+- 개인 컴퓨터 환경에서 이용
+- 서버 환경에서 bitGPT 패키지 공유하는 환경에서는 사용 금지
+    - 키를 패키지 루트에 저장하기 때문
+    - base64 인코딩 저장
+- 네이버 파파고 키
+    - `regist_naver_key()`
+- OpenAI API 키
+    - `regist_openai_key()`
+
+### 키 설정 방법
+
+- **세션 내에서만 지속 사용 가능**
+- 서버 환경에서 bitGPT 패키지 공유하는 환경에서 이용
+- 세션의 System environment 영역에 등록
+- 네이버 파파고 키
+    - `set_naver_key()`
+- OpenAI API 키
+    - `set_openai_key()`
+    
+:::
+
+
+## 대표 기능 목록
+
+| 구분    | 기능          | 함수                 | API    |
+|:-------:|:--------------|:---------------------|:-------|
+| 텍스트  | 텍스트 완성   | create_completion()  | OpenAI |
+| 텍스트  | 채팅 완성     | chat_completion()    | OpenAI |
+| 텍스트  | 채팅          | keep_completion()    | OpenAI |
+| 텍스트  | 임베딩        | create_embeddings    | OpenAI |
+| 텍스트  | 번역          | translate()          | 네이버 |
+| 이미지  | 이미지 생성   | draw_img()           | OpenAI |
+| 이미지  | 이미지 편집   | draw_img_edit()      | OpenAI |
+| 이미지  | 이미지 변형   | draw_img_variation() | OpenAI |
+| 오디오  | 오디오 녹음   | record_audio()       | -      |
+| 오디오  | STT           | transcript_audio()   | OpenAI |
+
+
+## 리소스
+
+::: panel-tabset
+### 패키지 리파지토리
+
+- [Github 사이트](https://github.com/bit2r/bitGPT){target="_blank"}
+- 설치: devtools::install_github("bit2r/bitGPT")
+
+![](img/github_bitGPT.png){width=50%}
+
+### 패키지 문서
+
+- [Packagedown 사이트](https://r2bit.com/bitGPT){target="_blank"}
+- bitGPT 소개 및 도움말 페이지
+
+![](img/pkgdown.png){width=50%}
+    
+:::
+
+

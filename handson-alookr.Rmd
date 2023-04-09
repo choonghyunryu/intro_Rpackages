@@ -1,0 +1,45 @@
+---
+title: "Binary classification with alookr"
+description: |
+  alookr 패키지로 **이진분류모형(Binary Classification)**을 손쉽게 수행할 수 있는 방법을 익히게 됩니다.
+site: distill::distill_website
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2  
+author:
+  - name: 유충현 
+    url: https://choonghyunryu.github.io/
+    affiliation: 한국R사용자회
+    affiliation_url: https://r2bit.com/   
+date: 2023-04-13   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      message = FALSE, 
+                      warning = FALSE, 
+                      collapse = FALSE,
+                      fig.align = "center")
+knitr::opts_chunk$set(fig.width = 12, fig.height = 9)
+
+library(shiny)
+library(htmltools)
+
+xaringanExtra :: use_panelset()
+```
+
+```{r tidyverse, echo=FALSE, out.width = "25%"}
+knitr::include_graphics("img/alookr_logo.png")
+```
+
+```{r, preface, echo=FALSE}
+div(class = "preface", 
+    h4("들어가기"),
+    "이진분류모형을 수행할 계획인가요?", br(),
+    "좀더 쉽게 모형을 개발할 수 있는 방법을 익힐 수 있습니다.")
+```
+
+<br>
+
+TO-DO
