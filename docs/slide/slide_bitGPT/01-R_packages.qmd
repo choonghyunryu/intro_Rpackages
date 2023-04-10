@@ -69,10 +69,10 @@
 
 - chat_completion()
     - 서비스 개발자가 채팅 기능을 구현하는 용도의 사용
-- 신규 개발 keep_completion()
+- 신규 개발한 keep_completion()
     - 사용자가 R 콘솔에서 채팅을 수행하는 용도의 사용
 
-![](img/issue_close.png){width=40% fig-align="left"}
+![](img/issue_close.png){width=30% fig-align="left"}
 
 
 ### 결론은

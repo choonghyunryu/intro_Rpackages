@@ -6,7 +6,7 @@ institute: "한국R사용자회"
 date: "2023-04-13"
 format: 
   insper-revealjs:
-    self-contained: false
+    self-contained: true
     footer: |
       [한국 R 사용자회](https://r2bit.com/){target="_blank"} • 슬라이드 제작 [Quarto](https://quarto.org/){target="_blank"} • 테마 [Insper](https://github.com/padsInsper/quarto-insper-theme){target="_blank"}
 date-format: long
@@ -22,7 +22,8 @@ lightbox: auto
 2. OpenAI API
 3. bitGPT
 4. bitGPT Demo
-5. 질의 응답
+5. bitGPT 응용 앱
+6. 질의 응답
 
 {{< include 01-R_packages.qmd >}}
 
@@ -31,5 +32,7 @@ lightbox: auto
 {{< include 03-intro_bitGPT.qmd >}} 
 
 {{< include 04-demo_bitGPT.qmd >}} 
+
+{{< include 05-app_bitGPT.qmd >}} 
 
 # 질의 응답

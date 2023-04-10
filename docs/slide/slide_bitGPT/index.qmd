@@ -22,7 +22,8 @@ lightbox: auto
 2. OpenAI API
 3. bitGPT
 4. bitGPT Demo
-5. 질의 응답
+5. bitGPT 응용 앱
+6. 질의 응답
 
 {{< include 01-R_packages.qmd >}}
 
@@ -31,5 +32,7 @@ lightbox: auto
 {{< include 03-intro_bitGPT.qmd >}} 
 
 {{< include 04-demo_bitGPT.qmd >}} 
+
+{{< include 05-app_bitGPT.qmd >}} 
 
 # 질의 응답

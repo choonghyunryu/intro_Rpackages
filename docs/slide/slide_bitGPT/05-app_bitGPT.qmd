@@ -1,0 +1,26 @@
+# `bitGPT 응용 앱`
+
+
+## bitGPT 연동 앱 데모 
+
+::: panel-tabset
+###  bitGPT를 이용한 Shiny 앱
+
+- 무엇이든 그려보세요
+    - `draw_img()`, `draw_img_variation()`
+    - 영문 프롬프트, 한글 프롬프트 지원
+    - **이미지 생성** 및 **이미지 변형**, **이미지 저장**
+- 무엇이든 물어보세요
+    - `chat_completion()`, `show()`
+    - 영문 프롬프트, 한글 프롬프트 지원
+    - **대화 내용의 브라우징**
+
+### 무엇이든 그려보세요
+
+![](img/app_image.png){width=65% fig-align="left"}
+
+### 무엇이든 물어보세요
+
+![](img/app_chat.png){width=65% fig-align="left"}
+
+:::
