@@ -6,7 +6,7 @@ institute: "한국R사용자회"
 date: "2023-04-13"
 format: 
   insper-revealjs:
-    self-contained: true
+    self-contained: false
     footer: |
       [한국 R 사용자회](https://r2bit.com/){target="_blank"} • 슬라이드 제작 [Quarto](https://quarto.org/){target="_blank"} • 테마 [Insper](https://github.com/padsInsper/quarto-insper-theme){target="_blank"}
 date-format: long
