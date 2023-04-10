@@ -56,7 +56,7 @@ div(class = "preface",
 
 ## 소개 슬라이드
 
-- [R과 함께 chatGPT 활용하기](https://choonghyunryu.github.io/intro_Rpackages/slide_bitGPT){target="_blank"}
+- [R과 함께 chatGPT 활용하기](https://choonghyunryu.github.io/intro_Rpackages/slide/slide_bitGPT/){target="_blank"}
 
 
 
