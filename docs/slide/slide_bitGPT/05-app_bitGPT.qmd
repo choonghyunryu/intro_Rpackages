@@ -4,8 +4,9 @@
 ## bitGPT 연동 앱 데모 
 
 ::: panel-tabset
-###  bitGPT를 이용한 Shiny 앱
+###  bitGPT 기반 앱 shinyGPT
 
+- [shinyGPT](https://github.com/choonghyunryu/shinyGPT){target="_blank"} 패키지
 - 무엇이든 그려보세요
     - `draw_img()`, `draw_img_variation()`
     - 영문 프롬프트, 한글 프롬프트 지원
@@ -17,10 +18,10 @@
 
 ### 무엇이든 그려보세요
 
-![](img/app_image.png){width=65% fig-align="left"}
+![](img/app_image.png){width=57% fig-align="left"}
 
 ### 무엇이든 물어보세요
 
-![](img/app_chat.png){width=65% fig-align="left"}
+![](img/app_chat.png){width=57% fig-align="left"}
 
 :::
