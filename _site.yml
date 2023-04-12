@@ -17,6 +17,8 @@ navbar:
           href: handson-bitNLP.html   
         - text: "Spatial Analysis with bitSpatial"
           href: handson-bitSpatial.html 
+        - text: "Author Reports with bitReport"
+          href: handson-bitReport.html           
         - text: "---"          
         - text: "Understand data with dlookr"
           href: handson-dlookr.html    

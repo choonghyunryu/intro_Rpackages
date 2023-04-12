@@ -48,12 +48,19 @@ package_list <- list(
     footer = "2023-01-23"
   ),
   tibble(
+    title = "bitReport",
+    image = "img/bitReport_logo.png",
+    text = "일관성있는 정적보고서 및 동적보고서를 쉽게 생성하게 도와주는 보고서 조판 및 저작 도구",
+    link = "https://github.com/bit2r/bitReport",
+    footer = "2022-08-28"
+  ),
+  tibble(
     title = "dlookr",
     image = "img/dlookr_logo.png",
     text = "데이터셋의 품질 진단, 탐색적 데이터 분석(EDA) 및 데이터의 변환을 지원하는 데이터분석 도구",
     link = "https://cran.r-project.org/web/packages/dlookr/index.html",
     footer = "2018-04-27"
-  ),
+  ),  
   tibble(
     title = "alookr",
     image = "img/alookr_logo.png",

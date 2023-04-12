@@ -1,7 +1,7 @@
 ---
-title: "Binary classification with alookr"
+title: "Author Reports with bitReport"
 description: |
-  alookr 패키지로 **이진분류모형(Binary Classification)**을 손쉽게 수행할 수 있는 방법을 익히게 됩니다.
+  bitReport 패키지로 **정적 보고서**와 **동적 보고서를**를 쉽게 저작할 수 있습니다.
 site: distill::distill_website
 output:
   distill::distill_article:
@@ -30,14 +30,14 @@ xaringanExtra :: use_panelset()
 ```
 
 ```{r tidyverse, echo=FALSE, out.width = "25%"}
-knitr::include_graphics("img/alookr_logo.png")
+knitr::include_graphics("img/bitReport_logo.png")
 ```
 
 ```{r, preface, echo=FALSE}
 div(class = "preface", 
     h4("들어가기"),
-    "이진분류모형을 수행할 계획인가요?", br(),
-    "좀더 쉽게 모형을 개발할 수 있는 방법을 익힐 수 있습니다.")
+    "분석도 끝났고 인사이트도 도출했다구?", br(),
+    "이제 여러분은 스크립트와 데이터 그리고 인사이트를 버무려 재현 가능한 보고서를 작성할 수 있습니다.")
 ```
 
 <br>

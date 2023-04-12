@@ -59,5 +59,11 @@ div(class = "preface",
 - [R과 함께 chatGPT 활용하기](https://choonghyunryu.github.io/intro_Rpackages/slide/slide_bitGPT/){target="_blank"}
 
 
+## bitGPT로 개발한 Shiny 앱
+
+- [shinyGPT](https://github.com/choonghyunryu/shinyGPT/){target="_blank"}
+
+
+
 
 
