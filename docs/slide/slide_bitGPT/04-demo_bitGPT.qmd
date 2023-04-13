@@ -18,6 +18,7 @@
 ###  한글 프롬프트
 
 - `ko2en = FALSE` 인수 적용으로 한글 프롬프트로 질의
+- 동일한 용량의 토큰을 사용하는데, 상대적으로 부족한 결과
 
 ![](img/text_ko.png){width=90% fig-align="left"}
 
@@ -48,7 +49,7 @@
 ::: panel-tabset
 ###  chat_completion()
 
-- `chat_completion()`를 채팅 앱을 개발할 수 있습니다.
+- `chat_completion()`으로 채팅 앱을 개발할 수 있습니다.
 - 함수의 목적
     - Shiny 앱이나 Markdown 문서를 개발할 수 있는 개발 용도
 - Message 객체의 핸들링이 필요
@@ -123,9 +124,11 @@
 - `keep_completion()`를 이용해서 콘솔에서 채팅 수행
     - `chat_completion()`, `show()` 등일 이용해 함수 개발
 - `last` 인수
-    - 마지막 내용만 출력할지의 여부
+    - 마지막 대화 내용만 출력할지의 여부
 - `initialize` 인수
-    - 새로운 채팅을 시작할 지의 여부
+    - 새로운 (주제의) 채팅을 시작할 지의 여부
+    - 계속 이전 대화를 가져가면 연산 비용이 커짐
+        - 토큰 사용량 증가
     
 ### 채팅 수행
 
@@ -142,15 +145,15 @@
 ### `create_embeddings()`
 
 - 텍스트 데이터의 분석을 위한 임베딩 데이터 생성
-- `keep_completion()`를 이용해서 임베딩 생성
+- `create_embeddings()`를 이용해서 임베딩 생성
 - 텍스트 임베딩 활용
     - 유사도 분석 - Search Documents
-    - 분류 모델 - Taxonomy Documents
+    - 분류 모델 - Documents Taxonomy
 
 ### 임베딩
 
 - 한국의 대표 시 3개중 특정 절의 임베딩
-- 님의 침묵, 향수, 목마와 숙녀
+- 한용운:님의 침묵, 정지용:향수, 박인환:목마와 숙녀
 
 ![](img/poem.png){width=100% fig-align="left"}
 
@@ -214,7 +217,7 @@
 ###  draw_img_variation()
 
 - `draw_img_variation()`를 이용해서 그림을 변형해봅니다.
-- 풍선을 들고 있는 외로운 로봇
+- 풍선을 들고 있는 외로운 로봇 이미지를 변형하려 함.
     - "abstract pencil and watercolor art of a lonely robot hoilding a balloon."
 - `draw_img()`로 그린 그림이 마음에 들지만 뭔가 부족하다면?
     - 새로 그리기 보다는 `draw_img_variation()`로 그림에 변형을 가해보세요.
@@ -264,7 +267,7 @@
     
 ### 이미지
 
-- 원본(좌측) 이미지 내부에 수정할 부분을 제거하여, 투명하게 만든 마스크 이미지(우측)
+- 원본(좌측) 내부에 편집할 부분을 마스킹한 이미지(우측) 생성
 
 ![원본 이미지 - image](img/robot.png){width=35% fig-align="left"}
 ![마스크 이미지 - mask](img/robot_mask.png){width=35% fig-align="left"}
@@ -311,7 +314,7 @@
 ###  transcript_audio()
 
 - `transcript_audio()`
-    - 이용해서 음성 오디오 파일로 STT(Speech to Text)를 수행
+    - 음성 오디오 파일로 STT(Speech to Text)를 수행
 - 한글 음성도 가능함
     - language = "ko" 옵션 지정
 - 지원 오디오 포맷
